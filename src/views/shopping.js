@@ -1,18 +1,31 @@
 import { useEffect, useState } from 'react';
-import { fetchShopping } from '../services/fetchfourtet';
+import { fetchShopping } from '../services/fetchshopping';
 
 export default function Shopping() {
-  const [albums, setAlbums] = useState([]);
+  const [shopping, setShopping] = useState([]);
   console.log('hello'); // works!
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchShopping();
-      setAlbums(data);
+      setShopping(data);
       //   console.log('album data', data);
-      console.log('album data');
+      console.log('shopping', shopping);
+      console.log('data', data);
     };
     fetchData();
   }, []);
-  return <div>jazz</div>;
+  return (
+    <div>
+      <div>A Shopping List </div>
+      <div>
+        {shopping.map((item) => (
+          <p key={item.id}>
+            <p>quantity: {item.quantity}</p>
+            item: {item.item}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
 }

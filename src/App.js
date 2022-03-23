@@ -1,10 +1,10 @@
 import './App.css';
-import Fourtet from './views/shopping';
+import Shopping from './views/shopping';
 
 function App() {
   return (
     <div className="App">
-      <Fourtet />
+      <Shopping />
     </div>
   );
 }
