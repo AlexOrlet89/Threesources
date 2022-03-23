@@ -3,15 +3,15 @@ import { fetchShopping } from '../services/fetchshopping';
 
 export default function Shopping() {
   const [shopping, setShopping] = useState([]);
-  console.log('hello'); // works!
+  // console.log('hello'); // works!
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchShopping();
       setShopping(data);
       //   console.log('album data', data);
-      console.log('shopping', shopping);
-      console.log('data', data);
+      // console.log('shopping', shopping);
+      // console.log('data', data);
     };
     fetchData();
   }, []);

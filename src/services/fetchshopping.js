@@ -14,6 +14,6 @@ import { checkError, client } from './client';
 
 export async function fetchShopping() {
   const response = await client.from('Shopping').select('*');
-  console.log('response', checkError(response));
+  // console.log('response', checkError(response));
   return checkError(response);
 }
