@@ -1,7 +1,11 @@
 import { checkError, client } from './client';
 
-export async function fetchMovies() {
+export async function fetchMovies(query) {
   const response = await client.from('movies').select('*');
-  console.log('Movies response', checkError(response));
+  if (query) {
+    const response = await client.from('movies').select('*').ilike('title', `%${query}%`);
+    return checkError(response);
+  }
+  //   console.log('Movies response', checkError(response));
   return checkError(response);
 }

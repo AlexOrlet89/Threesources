@@ -7,7 +7,7 @@ export default function Fourtet() {
     const fetchData = async () => {
       const data = await fetchFourtet();
       setAlbums(data);
-      console.log('album data', data);
+      //   console.log('album data', data);
     };
     fetchData();
   }, []);
