@@ -11,5 +11,14 @@ export default function Fourtet() {
     };
     fetchData();
   }, []);
-  return <div>Fourtet</div>;
+  return (
+    <div>
+      <div>Fourtet</div>
+      <div>
+        {albums.map((album) => (
+          <h2 key={album.id}>{album.AlbumName}</h2>
+        ))}
+      </div>
+    </div>
+  );
 }
