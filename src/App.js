@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import './App.css';
+import Fourtet from './views/fourtet';
+import Main from './views/main';
+import Movies from './views/movies';
+import Navbar from './views/navbar';
+import Shopping from './views/shopping';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route exact path="/shopping">
+            <Shopping />
+          </Route>
+          <Route exact path="/Fourtet">
+            <Fourtet />
+          </Route>
+          <Route exact path="/Movies">
+            <Movies />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
